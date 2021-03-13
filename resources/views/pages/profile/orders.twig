@@ -1,0 +1,15 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+  <h2 class="mb-5">Мои заявления:</h2>
+
+  {% if pagination.total == 0 %}
+    <h5>Вы не заказывали услуг.</h5>
+  {% else %}
+    {% for order in orders %}
+      {% include 'components/order-card.twig' with order %}
+    {% endfor %}
+
+    {% include 'components/pagination.twig' with pagination %}
+  {% endif %}
+{% endblock %}

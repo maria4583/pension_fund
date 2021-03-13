@@ -1,0 +1,45 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+  <div class="d-flex align-items-center mb-5">
+    <img src={{ service.icon }} alt="" class="icon">
+    <div class="mx-4">
+      <h3>{{ service.title }}</h3>
+      <p class="text-muted">{{ service.description }}</p>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <h5>Сроки оказания услуги</h5>
+    <p class="text-muted">
+      {% if service.deadline == 0 %}
+        Услуга предоставляется в режиме реального времени.
+      {% else %}
+        Услуга предоставляется в течении {{ service.deadline }} календр. дн.
+      {% endif %} 
+    </p>
+  </div>
+
+  <div class="mb-3">
+    <h5>Стоимость оказания услуги</h5>
+    <p class="text-muted">
+      {% if service.price == 0 %}
+        Услуга предоставляется бесплатно.
+      {% else %}
+        Стоимость услуги {{ service.price }} руб.
+      {% endif %} 
+    </p>
+  </div>
+
+  <div class="mb-4">
+    <h5>Необходимые документы</h5>
+    <ul>
+      <li class="text-muted">Паспорт РФ</li>
+      <li class="text-muted">СНИЛС</li>
+      <li class="text-muted">Полис ОМС</li>
+      <li class="text-muted">ИНН</li>
+    </ul>
+  </div>
+
+  <a href="/services/{{ service.id }}/order" class="btn btn-primary">Получить услугу</a>
+{% endblock %}

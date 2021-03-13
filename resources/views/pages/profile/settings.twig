@@ -1,0 +1,71 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+  <h2 class="mb-5">Редактировать профиль: </h2>
+
+  <form action="/profile/settings/edit" method="post" class="w-100">
+
+    <div class="form-group mb-4">
+      <label for="name" class="form-label">Имя</label>
+      <input type="text" name="name" id="name" class="form-control mb-2" value="{{ user.name }}" required readonly>
+
+      <label for="surname" class="form-label">Фамилия</label>
+      <input type="text" name="surname" class="form-control mb-2" id="surname" value="{{ user.surname }}" required readonly>
+
+      <label for="middle_name" class="form-label">Отчество</label>
+      <input type="text" name="middle_name" class="form-control mb-2" id="middle_name" value="{{ user.middle_name }}">
+    </div>
+
+    <div class="form-group mb-4">
+      <label class="form-label">Пол</label>
+
+      <div class="d-flex">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gender" id="gender-female" value="f" {% if user.gender == 'f' %} checked {% endif %}>
+          <label class="form-check-label" for="gender-female">
+            Женщина
+          </label>
+        </div>
+        <div class="form-check mx-4">
+          <input class="form-check-input" type="radio" name="gender" id="gender-male" value="m" {% if user.gender == 'm' %} checked {% endif %}>
+          <label class="form-check-label" for="gender-male">
+            Мужчина
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="birth" class="form-label">Дата рождения</label>
+      <input type="date" name="birth" class="form-control mb-2" id="birth" value="{{ user.birth }}" required>
+
+      <label for="address" class="form-label">Адрес прописки</label>
+      <textarea name="address" class="form-control mb-2" id="address">{{ user.address }}</textarea>
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="passport" class="form-label">Паспорт РФ</label>
+      <input type="text" name="passport" class="form-control mb-2" id="passport" value="{{ user.passport }}">
+
+      <label for="snils" class="form-label">СНИЛС</label>
+      <input type="text" name="snils" class="form-control mb-2" id="snils" value="{{ user.snils }}">
+
+      <label for="oms" class="form-label">Полис ОМС</label>
+      <input type="text" name="oms" class="form-control mb-2" id="oms" value="{{ user.oms }}">
+
+      <label for="inn" class="form-label">ИНН</label>
+      <input type="text" name="inn" class="form-control mb-2" id="inn" value="{{ user.inn }}">
+    </div>
+
+    <div class="form-group mb-4">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" name="email" class="form-control mb-2" id="email" value="{{ user.email }}">
+
+      <label for="phone" class="form-label">Номер телефона</label>
+      <input type="tel" name="phone" class="form-control mb-2" id="phone" value="{{ user.phone }}" required readonly>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Редактировать</button>
+
+  </form>
+{% endblock %}

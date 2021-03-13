@@ -1,0 +1,29 @@
+<nav class="container d-flex justify-content-end mb-4">
+  <div class="w-auto py-3">
+    <div>
+      <ul class="d-flex">
+        <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="/services">Услуги</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Личный кабинет
+          </a>
+          {% if auth %}
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/profile/orders">Мои заявления</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/profile/settings">Настройки профиля</a></li>
+              <li><a class="dropdown-item" href="/auth/logout">Выйти</a></li>
+            </ul>
+          {% else %}
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/auth/login">Войти</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/auth/register">Зарегистрироваться</a></li>
+            </ul>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

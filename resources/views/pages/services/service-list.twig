@@ -1,0 +1,10 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+  <h2 class="mb-5">Электронные услуги:</h2>
+  <div class="d-flex flex-wrap justify-content-between">
+    {% for service in services %}
+      {% include 'components/service-card.twig' with service %}
+    {% endfor %}
+  </div>
+{% endblock %}

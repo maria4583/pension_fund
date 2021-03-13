@@ -1,0 +1,16 @@
+<div class="w-100 d-flex justify-content-center align-items-center border-top border-bottom mb-4">
+  <img src={{ order.icon }} alt="" class="icon">
+  <div class="card-body">
+    <div class="card-text">
+      <p>{{ order.title }}</p>
+      <small class="text-muted">
+        {% if order.status %}
+          Услуга оказана
+        {% else %}
+          В обработке
+        {% endif %}
+      </small>
+    </div>
+  </div>
+  <small class="align-self-start mt-2">{{ order.date|date('d-m-Y H:i') }}</small>
+</div>

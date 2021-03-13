@@ -1,0 +1,18 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+  <div>
+    <h2 class="mb-5">Главные новости:</h2>
+    {% include 'components/news-slider.twig' %}
+  </div>
+
+  <div>
+    <h2 class="my-5">Популярные услуги:</h2>
+    <div class="d-flex flex-column">
+      {% for service in services %}
+        {% include 'components/service-card.twig' with service %}
+      {% endfor %}
+    </div>
+    <a class="btn btn-primary" href="/services">Все услуги</a>
+  </div>
+{% endblock %}
