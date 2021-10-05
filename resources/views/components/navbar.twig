@@ -1,29 +1,48 @@
-<nav class="container d-flex justify-content-end mb-4">
-  <div class="w-auto py-3">
-    <div>
-      <ul class="d-flex">
-        <li class="nav-item"><a class="nav-link" href="/">Главная</a></li>
-        <li class="nav-item"><a class="nav-link" href="/services">Услуги</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Личный кабинет
-          </a>
-          {% if auth %}
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/profile/orders">Мои заявления</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/profile/settings">Настройки профиля</a></li>
-              <li><a class="dropdown-item" href="/auth/logout">Выйти</a></li>
-            </ul>
-          {% else %}
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/auth/login">Войти</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/auth/register">Зарегистрироваться</a></li>
-            </ul>
-          {% endif %}
-        </li>
-      </ul>
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light py-4">
+	<div class="container d-flex justify-content-between">
+		<a class="navbar-brand" href="/">Пенсионный фонд</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse nav-menu" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="/">Главная</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/services">Услуги</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Личный кабинет
+					</a>
+					{% if auth %}
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item" href="/profile/orders">Мои заявления</a>
+							</li>
+							<li><hr class="dropdown-divider"></li>
+							<li>
+								<a class="dropdown-item" href="/profile/settings">Настройки профиля</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="/auth/logout">Выйти</a>
+							</li>
+						</ul>
+					{% else %}
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li>
+								<a class="dropdown-item" href="/auth/login">Войти</a>
+							</li>
+							<li><hr class="dropdown-divider"></li>
+							<li>
+								<a class="dropdown-item" href="/auth/register">Зарегистрироваться</a>
+							</li>
+						</ul>
+					{% endif %}
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>

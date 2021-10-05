@@ -12,6 +12,10 @@ html, body {
   height: 100%;
 }
 
+.nav-menu {
+  flex-grow: 0;
+}
+
 .nav-item {
   list-style: none;
 }
