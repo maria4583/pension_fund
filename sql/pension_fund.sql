@@ -33,7 +33,7 @@ CREATE TABLE `order` (
   `service_id` int NOT NULL,
   `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `status` enum('0','1') DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `order`
@@ -55,7 +55,7 @@ CREATE TABLE `service` (
   `deadline` int NOT NULL,
   `description` varchar(500) NOT NULL,
   `icon` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `service`
@@ -93,7 +93,7 @@ CREATE TABLE `user` (
   `oms` varchar(16) DEFAULT NULL,
   `inn` varchar(12) DEFAULT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `user`
